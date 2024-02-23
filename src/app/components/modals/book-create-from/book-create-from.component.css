@@ -1,0 +1,26 @@
+.book-create__modal{
+    width: 400px;
+    height: 60svh;
+    font-size: 1.05rem;
+    padding:1rem;
+    border-radius: 20px!important;
+    display: flex;
+    flex-direction: column;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  @media(max-width:768px){
+    .book-create__modal{
+        width: 70svw;
+        height: 70svh;
+    }
+}

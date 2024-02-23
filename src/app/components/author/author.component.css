@@ -1,0 +1,24 @@
+.authors-list__item{
+    min-width:320px;
+    max-width:500px;
+    min-height:100px;
+    margin-bottom:40px;
+    box-shadow: 1px 1px 10px rgb(163, 163, 163);
+    transition: box-shadow 0.5s ease;
+    padding:1rem;
+    border-radius:20px;
+    margin-right: 2rem;
+    
+}
+.authors-list__item:hover{
+    box-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+@media(max-width:768px)
+{
+    .authors-list__item{
+        margin-right: 0;
+        min-width:280px;
+    }
+    
+}

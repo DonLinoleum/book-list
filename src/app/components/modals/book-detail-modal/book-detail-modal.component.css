@@ -1,0 +1,28 @@
+.book-item__modal{
+    width: 400px;
+    height: 100%;
+    font-size: 1.05rem;
+    padding:1rem;
+    border-radius: 20px!important;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-item__modal h2{
+    text-align: center;
+}
+
+.book-item__modal svg{
+    margin-top:1rem;
+    align-self: center;
+    margin-top:auto;
+}
+
+@media(max-width:768px){
+    .book-item__modal{
+        width: 70svw;
+    }
+    .book-item__modal svg{
+        transform: scale(0.7);
+    }
+}

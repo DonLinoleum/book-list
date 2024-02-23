@@ -1,6 +1,6 @@
 import { IAuthor, IBook, IGenre, ILanguage } from "../types/types";
 
-export const authorsDB:IAuthor[] = 
+export let authorsDB:IAuthor[] = 
 [
     {name:"Лев Николаевич Толстой"},
     {name:"Антон Павлович Чехов"},
@@ -8,58 +8,52 @@ export const authorsDB:IAuthor[] =
     {name: "Лю Цысинь"}
 ]
 
-export const languagesDB:ILanguage[] = 
+export let languagesDB:ILanguage[] = 
 [
     {title:"Русский"},{title:"Английский"},{title:"Китайский"}
 ]
 
-export const genresDB:IGenre[] = 
-[
-    {title: "Новелла"},
-    {title: "Реализм"},
-    {title: "Художественная проза"},
-    {title: "Приключенческий роман"},
-    {title: "Фантастика"},
-    {title: "Роман"},
-    {title: "Пьеса"},
-]
-
-export const booksDB:IBook[] = 
+export let booksDB:IBook[] = 
 [
     {
         title: "Белый Клык",
+        description: "Подробное описание...",
         author: authorsDB.find(el=>el.name === "Джек Лондон"),
         pages: 224,
         language:languagesDB.find(el=>el.title === "Английский"),
-        genre: genresDB.find(el=>el.title === "Приключенческий роман")
+        genre:  "Приключенческий роман"
     },
     {
         title: "Война и мир",
+        description: "Подробное описание...",
         author: authorsDB.find(el=>el.name === "Лев Николаевич Толстой"),
         pages: 960,
         language:languagesDB.find(el=>el.title === "Русский"),
-        genre: genresDB.find(el=>el.title === "Роман")    
+        genre: "Роман"
     },
     {
         title: "Вишневый сад",
+        description: "Подробное описание...",
         author: authorsDB.find(el=>el.name === "Антон Павлович Чехов"),
         pages: 224,
         language:languagesDB.find(el=>el.title === "Русский"),
-        genre: genresDB.find(el=>el.title === "Пьеса") 
+        genre: "Пьеса"
     },
     {
         title: "Задача трех тел",
+        description: "Подробное описание...",
         author: authorsDB.find(el=>el.name === "Лю Цысинь"),
         pages: 464,
         language:languagesDB.find(el=>el.title === "Китайский"),
-        genre: genresDB.find(el=>el.title === "Фантастика") 
+        genre: "Фантастика"
     },
     {
         title: "Темный лес",
+        description: "Очень подробное описание про Темный лес",
         author: authorsDB.find(el=>el.name === "Лю Цысинь"),
         pages: 640,
         language:languagesDB.find(el=>el.title === "Китайский"),
-        genre: genresDB.find(el=>el.title === "Фантастика") 
+        genre: "Фантастика"
     }
 ]
 

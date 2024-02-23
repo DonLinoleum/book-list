@@ -1,0 +1,13 @@
+.authors-list{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+@media(max-width:768px)
+{
+    .authors-list{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,23 @@
+.book-item{
+    border: 1px solid rgb(155, 151, 172);
+    font-size: 1.05rem;
+    margin:1rem;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 280px;
+    box-shadow: 1px 1px 10px rgb(163, 163, 163);
+    transition: box-shadow 0.5s ease;
+    cursor: pointer;
+
+}
+
+.book-item:hover{
+    box-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+@media (max-width:280px)
+{
+    .book-item{
+        width: 65%;
+    }
+}

@@ -1,0 +1,8 @@
+<button class="add-button" (click)="create()" mat-raised-button color="link">Добавить автора</button>
+<h1>Список авторов</h1>
+<div class="authors-list">
+    <author *ngFor="let author of authors"
+     [name] = "author.name"   
+    >
+    </author>
+</div>

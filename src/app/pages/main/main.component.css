@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.books-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+}
+
+@media(max-width:768px){
+    .books-wrapper{
+        justify-content: center;
+    }
+}

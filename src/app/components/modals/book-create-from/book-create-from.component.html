@@ -1,0 +1,51 @@
+<div class="book-create__modal">
+    <form [formGroup]="modalForm" novalidate (ngSubmit)="submit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Название книги</mat-label>
+            <input [(ngModel)] = "formData.title" formControlName="title" matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Автор</mat-label>
+            <select  matNativeControl [(ngModel)] = "formData.author" formControlName="author" name="author">
+                   <option value="" selected></option>
+                   <option *ngFor="let author of this.authors" [value]="author.name">
+                     {{author.name}}
+                    </option> 
+            </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Описание</mat-label>    
+            <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)] = "formData.description" formControlName="description"
+            ></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Число страниц</mat-label>
+            <input [(ngModel)] = "formData.pages" formControlName="pages" matInput type="number" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Язык</mat-label>
+            <select  matNativeControl [(ngModel)] = "formData.language" formControlName="language" name="language">
+                   <option value="" selected></option>
+                   <option *ngFor="let language of this.languages" [value]="language.title">
+                     {{language.title}}
+                    </option> 
+            </select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Жанр</mat-label>    
+            <input [(ngModel)] = "formData.genre" formControlName="genre" matInput type="text" />
+        </mat-form-field>
+
+        <button [disabled]="modalForm.invalid" (click)="submit()" mat-raised-button mat-button mat-dialog-close color="primary">Готово</button>
+    </form>
+</div>

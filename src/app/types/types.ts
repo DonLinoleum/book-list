@@ -1,11 +1,21 @@
 export interface IBook
 {
     title:string,
+    description: string,
     author:IAuthor | undefined,
     pages:number,
     language:ILanguage | undefined,
-    genre: IGenre | undefined
+    genre: string
 }
+
+export interface IFormBookData{
+    title:string 
+    description:string
+    author: string
+    pages:number 
+    language:string 
+    genre: string 
+  }
 
 export interface IAuthor
 {
