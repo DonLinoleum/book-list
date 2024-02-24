@@ -12,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import { MatDialogModule,MatDialog} from '@angular/material/dialog';
+import {MatSliderModule} from '@angular/material/slider';
+import { MatDialogModule} from '@angular/material/dialog';
 import { MainComponent } from './pages/main/main.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { BookComponent } from './components/book/book.component';
@@ -22,10 +23,12 @@ import { AuthorUpdateComponent } from './components/modals/author-update/author-
 import { GetBooksService } from './services/getBooks.service';
 import { GetAuthorsService } from './services/getAuthors.service';
 import { GetLanguageService } from './services/getLanguages.service';
+import { GetGenreService } from './services/getGenres.service';
 import { UpdateDB } from './services/updateDb.service';
-import { AuthorCreateFromComponent } from './components/modals/author-create-from/author-create-from.component';
-import { BookCreateFromComponent } from './components/modals/book-create-from/book-create-from.component';
-
+import { AuthorCreateFromComponent } from './components/modals/author-create-form/author-create-form.component';
+import { BookCreateFromComponent } from './components/modals/book-create-form/book-create-form.component';
+import { FilterBooksComponent } from './components/filter-books/filter-books.component';
+import { GetMinAndMaxPagesService } from './services/getMinAndMaxPages.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { BookCreateFromComponent } from './components/modals/book-create-from/bo
     AuthorUpdateComponent,
     AuthorCreateFromComponent,
     BookCreateFromComponent,
+    FilterBooksComponent,
     
 
   ],
@@ -55,9 +59,10 @@ import { BookCreateFromComponent } from './components/modals/book-create-from/bo
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSliderModule
   ],
-  providers: [GetBooksService,GetAuthorsService,UpdateDB,GetLanguageService],
+  providers: [GetBooksService,GetAuthorsService,UpdateDB,GetLanguageService,GetGenreService,GetMinAndMaxPagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

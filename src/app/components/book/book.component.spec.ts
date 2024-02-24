@@ -1,21 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { BookComponent } from './book.component';
 
-describe('BookComponent', () => {
-  let component: BookComponent;
-  let fixture: ComponentFixture<BookComponent>;
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [BookComponent]
-    });
-    fixture = TestBed.createComponent(BookComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+describe("BookComponent",()=>{
+    beforeEach(()=>{
+        TestBed.configureTestingModule({
+            declarations:[BookComponent],
+            imports:[MatDialogModule],
+            providers:[MatDialog]
+        }).compileComponents()
+    })
+    it("shpuld get book component",()=>{
+        const fixture = TestBed.createComponent(BookComponent)
+        const book = fixture.debugElement.componentInstance
+        expect(book).toBeTruthy()
+    })
+})

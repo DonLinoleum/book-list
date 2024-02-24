@@ -5,7 +5,7 @@ export interface IBook
     author:IAuthor | undefined,
     pages:number,
     language:ILanguage | undefined,
-    genre: string
+    genre: IGenre | undefined
 }
 
 export interface IFormBookData{

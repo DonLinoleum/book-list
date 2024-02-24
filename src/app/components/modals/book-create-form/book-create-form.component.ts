@@ -7,9 +7,9 @@ import { UpdateDB } from 'src/app/services/updateDb.service';
 import { IFormBookData } from 'src/app/types/types';
 
 @Component({
-  selector: 'app-book-create-from',
-  templateUrl: './book-create-from.component.html',
-  styleUrls: ['./book-create-from.component.css']
+  selector: 'app-book-create-form',
+  templateUrl: './book-create-form.component.html',
+  styleUrls: ['./book-create-form.component.css']
 })
 export class BookCreateFromComponent implements OnInit 
 {
@@ -31,7 +31,7 @@ export class BookCreateFromComponent implements OnInit
   constructor(private formBuilder:FormBuilder,
     private getLanguages:GetLanguageService,
     private getAuthors:GetAuthorsService,
-    private updateDB:UpdateDB
+    private updateDB:UpdateDB,
     )
     {
       this.modalForm = formBuilder.group({
@@ -46,13 +46,13 @@ export class BookCreateFromComponent implements OnInit
 
   ngOnInit(): void 
   {
-    this.languages = this.getLanguages.getAllGenres()
+    this.languages = this.getLanguages.getAllLanguages()
     this.authors = this.getAuthors.getAllAuthors()
   }
 
   submit()
   {
-    this.updateDB.createNewBook(this.formData)
+     this.updateDB.createNewBook(this.formData)
   }
 }
 

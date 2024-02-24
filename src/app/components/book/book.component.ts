@@ -16,7 +16,7 @@ export class BookComponent {
   @Input() author:IAuthor | undefined = undefined
   @Input() pages: number = 0
   @Input() language: ILanguage | undefined = undefined
-  @Input() genre: string = ""
+  @Input() genre: IGenre | undefined = undefined
 
   openModal(){const modal = this.modal.open(BookDetailModalComponent,{
     data:{

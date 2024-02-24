@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IAuthor } from 'src/app/types/types';
 import { MatDialog } from '@angular/material/dialog';
 import { GetAuthorsService } from 'src/app/services/getAuthors.service';
-import { AuthorCreateFromComponent } from 'src/app/components/modals/author-create-from/author-create-from.component';
+import { AuthorCreateFromComponent } from 'src/app/components/modals/author-create-form/author-create-form.component';
 
 @Component({
   selector: 'app-authors',

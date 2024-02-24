@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { AuthorComponent } from './author.component';
 
-describe('AuthorComponent', () => {
-  let component: AuthorComponent;
-  let fixture: ComponentFixture<AuthorComponent>;
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AuthorComponent]
-    });
-    fixture = TestBed.createComponent(AuthorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+describe('AuthorComponent',()=>{
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [AuthorComponent],
+            imports :[MatDialogModule],
+            providers:[MatDialog]  
+        }).compileComponents()
+    })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    it('should get author component',()=>{
+        const fixture = TestBed.createComponent(AuthorComponent);
+        const author = fixture.debugElement.componentInstance
+        expect(author).toBeTruthy()
+    })
+})

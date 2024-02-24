@@ -7,12 +7,12 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Автор</mat-label>
-            <select  matNativeControl [(ngModel)] = "formData.author" formControlName="author" name="author">
-                   <option value="" selected></option>
-                   <option *ngFor="let author of this.authors" [value]="author.name">
+            <mat-select matNativeControl [(ngModel)] = "formData.author" formControlName="author" name="author">
+                   <mat-option value="" selected></mat-option>
+                   <mat-option *ngFor="let author of this.authors" [value]="author.name">
                      {{author.name}}
-                    </option> 
-            </select>
+                    </mat-option> 
+            </mat-select>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -33,13 +33,14 @@
 
         <mat-form-field class="example-full-width">
             <mat-label>Язык</mat-label>
-            <select  matNativeControl [(ngModel)] = "formData.language" formControlName="language" name="language">
-                   <option value="" selected></option>
-                   <option *ngFor="let language of this.languages" [value]="language.title">
+            <mat-select [(ngModel)] = "formData.language" formControlName="language" name="language">
+                   <mat-option value="" selected></mat-option>
+                   <mat-option *ngFor="let language of this.languages" [value]="language.title">
                      {{language.title}}
-                    </option> 
-            </select>
+                    </mat-option> 
+            </mat-select>
         </mat-form-field>
+        
 
         <mat-form-field class="example-full-width">
             <mat-label>Жанр</mat-label>    

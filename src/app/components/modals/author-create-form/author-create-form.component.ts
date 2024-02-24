@@ -4,9 +4,9 @@ import { UpdateDB } from 'src/app/services/updateDb.service';
 import { GetAuthorsService } from 'src/app/services/getAuthors.service';
 
 @Component({
-  selector: 'app-author-create-from',
-  templateUrl: './author-create-from.component.html',
-  styleUrls: ['./author-create-from.component.css']
+  selector: 'app-author-create-form',
+  templateUrl: './author-create-form.component.html',
+  styleUrls: ['./author-create-form.component.css']
 })
 export class AuthorCreateFromComponent 
 {

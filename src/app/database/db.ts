@@ -13,6 +13,11 @@ export let languagesDB:ILanguage[] =
     {title:"Русский"},{title:"Английский"},{title:"Китайский"}
 ]
 
+export let genreDB:IGenre[] = 
+[
+    {title:"Приключенческий роман"},{title:"Роман"},{title:"Пьеса"},{title:"Фантастика"}
+]
+
 export let booksDB:IBook[] = 
 [
     {
@@ -21,7 +26,7 @@ export let booksDB:IBook[] =
         author: authorsDB.find(el=>el.name === "Джек Лондон"),
         pages: 224,
         language:languagesDB.find(el=>el.title === "Английский"),
-        genre:  "Приключенческий роман"
+        genre:  genreDB.find(el => el.title === "Приключенческий роман")
     },
     {
         title: "Война и мир",
@@ -29,7 +34,7 @@ export let booksDB:IBook[] =
         author: authorsDB.find(el=>el.name === "Лев Николаевич Толстой"),
         pages: 960,
         language:languagesDB.find(el=>el.title === "Русский"),
-        genre: "Роман"
+        genre: genreDB.find(el => el.title ==="Роман")
     },
     {
         title: "Вишневый сад",
@@ -37,7 +42,7 @@ export let booksDB:IBook[] =
         author: authorsDB.find(el=>el.name === "Антон Павлович Чехов"),
         pages: 224,
         language:languagesDB.find(el=>el.title === "Русский"),
-        genre: "Пьеса"
+        genre: genreDB.find(el => el.title ==="Пьеса")
     },
     {
         title: "Задача трех тел",
@@ -45,7 +50,7 @@ export let booksDB:IBook[] =
         author: authorsDB.find(el=>el.name === "Лю Цысинь"),
         pages: 464,
         language:languagesDB.find(el=>el.title === "Китайский"),
-        genre: "Фантастика"
+        genre: genreDB.find(el => el.title ==="Фантастика")
     },
     {
         title: "Темный лес",
@@ -53,7 +58,7 @@ export let booksDB:IBook[] =
         author: authorsDB.find(el=>el.name === "Лю Цысинь"),
         pages: 640,
         language:languagesDB.find(el=>el.title === "Китайский"),
-        genre: "Фантастика"
+        genre: genreDB.find(el => el.title ==="Фантастика")
     }
 ]
 

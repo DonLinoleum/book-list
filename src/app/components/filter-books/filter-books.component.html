@@ -1,0 +1,40 @@
+<div class="filter-wrapper">
+<h3>Фильтр</h3>
+<div class="filter-elements">
+    <mat-form-field>
+        <mat-label>Авторы</mat-label>
+        <mat-select multiple [(ngModel)]="filterValueByAuthorsName" (selectionChange)="filterBooks()">
+          <mat-option *ngFor="let author of authorsList" [value]="author.name">{{author.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Язык</mat-label>
+        <mat-select multiple [(ngModel)]="filterValueLanguage" (selectionChange)="filterBooks()">
+          <mat-option *ngFor="let language of languageList" [value]="language.title">{{language.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="slider">
+            <p>Число страниц</p>
+        <div class="range-wrapper">
+            <p class="min">От: {{filterValueMinPages}}</p>
+            <p class="max">До: {{filterValueMaxPages}}</p>
+        </div>
+      <mat-slider [min]="minPagesFromDB" [max]="maxPagesFromDB">
+        <input [(ngModel)]="filterValueMinPages" (input)="filterBooks()" matSliderStartThumb>
+        <input [(ngModel)]="filterValueMaxPages" (input)="filterBooks()" matSliderEndThumb>
+      </mat-slider>
+      </div>
+
+  
+    <mat-form-field>
+      <mat-label>Жанр</mat-label>
+      <mat-select [(ngModel)]="filterValueByGenre" (selectionChange)="filterBooks()">
+        <mat-option value="" selected></mat-option>
+        <mat-option *ngFor="let genre of genreList" [value]="genre.title">{{genre.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+</div>
+</div>

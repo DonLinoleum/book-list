@@ -1,6 +1,18 @@
 <button class="add-button" (click)="openModal()" mat-raised-button color="link">Добавить книгу</button>
 
-<div class="filter-wrapper">
+<filter-books
+[(searchedAndFilteredBooks)]="searchedAndFilteredBooks"
+[books] = "books"
+[authorsList] = "authorsList"
+[languageList] = "languageList"
+[maxPagesFromDB] = "maxPagesFromDB"
+[minPagesFromDB] = "minPagesFromDB"
+[genreList]="genresList"
+>
+</filter-books>
+
+<h3>Поиск</h3>
+<div class="search-wrapper">
 <mat-form-field class="example-full-width">
     <mat-label>Поиск по названию или описанию</mat-label>    
     <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"
@@ -13,8 +25,8 @@
 
 <div class="main">
     <h1>Список книг</h1>
-    <div class="books-wrapper">
-            <book *ngFor="let book of searchedBooks"
+    <div *ngIf="searchedAndFilteredBooks.length > 0; else withoutItems" class="books-wrapper">
+            <book *ngFor="let book of searchedAndFilteredBooks"
             [title] = "book.title"
             [description] = "book.description"
             [author] = "book.author"
@@ -23,4 +35,7 @@
             [genre] = "book.genre"
             ></book>
     </div>
+    <ng-template #withoutItems>
+        <h3>К сожалению, ничего не найдено.</h3>
+    </ng-template>
 </div>

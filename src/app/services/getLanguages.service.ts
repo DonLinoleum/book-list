@@ -7,7 +7,7 @@ import { languagesDB } from "../database/db";
 export class GetLanguageService
 {
     constructor(){}
-    getAllGenres():ILanguage[]
+    getAllLanguages():ILanguage[]
     {   
         return languagesDB;
     }
