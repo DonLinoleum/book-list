@@ -21,10 +21,11 @@ export class MainComponent implements OnInit
   genresList:IGenre[] = []
   languageList:ILanguage[] = []
 
-  searchValueNameOrDescription:string = ""
   filterValueByLanguagesName:string[] = []
   filterValueByPages = ""
   filterValueByGenresName:string[] = []
+
+  
 
   minPagesFromDB:number = 0
   maxPagesFromDB:number = 0
@@ -43,9 +44,8 @@ export class MainComponent implements OnInit
     this.minPagesFromDB = this.getMinAndMaxPages.getMinAndMaxPages().min
     this.maxPagesFromDB = this.getMinAndMaxPages.getMinAndMaxPages().max
     this.genresList = this.getGenreService.getAllGenres()
-    this.books = this.getBookService.getAllBooks();
+    this.books = this.getBookService.getAllBooks()
     this.searchedAndFilteredBooks = this.books 
-  
   }
 
   openModal()
@@ -53,16 +53,6 @@ export class MainComponent implements OnInit
     const modal =  this.modal.open(BookCreateFromComponent,{panelClass:"modal-wrapper"})
     modal.afterClosed().subscribe(result => {
       this.ngOnInit()
-    })
-  }
-
-  searchByNameOrDescription()
-  {
-    this.searchedAndFilteredBooks = this.books.filter(el=>
-    {
-      return el.title.toLocaleLowerCase().includes(this.searchValueNameOrDescription.toLocaleLowerCase()) 
-        ||
-      el.description.toLocaleLowerCase().includes(this.searchValueNameOrDescription.toLocaleLowerCase())
     })
   }
 }

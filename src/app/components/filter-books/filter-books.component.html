@@ -31,7 +31,7 @@
     <mat-form-field>
       <mat-label>Жанр</mat-label>
       <mat-select [(ngModel)]="filterValueByGenre" (selectionChange)="filterBooks()">
-        <mat-option value="" selected></mat-option>
+        <mat-option value="" selected>Все</mat-option>
         <mat-option *ngFor="let genre of genreList" [value]="genre.title">{{genre.title}}</mat-option>
       </mat-select>
     </mat-form-field>

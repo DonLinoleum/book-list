@@ -2,21 +2,12 @@
     display: flex;
     flex-direction: column;
 }
-h3{
-    font-size: 1.2rem;
-    margin-left:1rem;
-}
 
 .books-wrapper{
     display: flex;
     flex-wrap: wrap;
 }
 
-.search-wrapper{
-    display: flex;
-    flex-direction: column;
-    margin-top:10px;
-}
 @media(max-width:768px){
     .books-wrapper{
         justify-content: center;

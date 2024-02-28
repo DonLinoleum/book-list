@@ -34,14 +34,12 @@ export class FilterBooksComponent implements OnInit
   filterBooks()
   {
       this.searchedAndFilteredBooks = this.books.filter(el=>{
-        console.log(this.filterValueByGenre)
-          return (this.filterValueByAuthorsName.length > 0 ? this.filterValueByAuthorsName.includes(el.author?.name as string) : []) &&
-          (this.filterValueLanguage.length > 0 ? this.filterValueLanguage.includes(el.language?.title as string) : []) &&
-          (this.filterValueMinPages > 0 ? el.pages >= this.filterValueMinPages : []) && 
-          (this.filterValueMaxPages > 0 ? el.pages <= this.filterValueMaxPages : []) &&
-          (this.filterValueByGenre.length > 0 ? this.filterValueByGenre.includes(el.genre?.title as string) : [])
+          return (this.filterValueByAuthorsName.length > 0 ? this.filterValueByAuthorsName.includes(el.author?.name as string) : true) &&
+          (this.filterValueLanguage.length > 0 ? this.filterValueLanguage.includes(el.language?.title as string) : true) &&
+          (this.filterValueMinPages > 0 ? el.pages >= this.filterValueMinPages : true) && 
+          (this.filterValueMaxPages > 0 ? el.pages <= this.filterValueMaxPages : true) &&
+          (this.filterValueByGenre.length > 0 ? this.filterValueByGenre.includes(el.genre?.title as string) : true)
       })
-    
         this.searchedAndFilteredBooksChange.emit(this.searchedAndFilteredBooks)
   }
 }

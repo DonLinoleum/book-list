@@ -29,6 +29,8 @@ import { AuthorCreateFromComponent } from './components/modals/author-create-for
 import { BookCreateFromComponent } from './components/modals/book-create-form/book-create-form.component';
 import { FilterBooksComponent } from './components/filter-books/filter-books.component';
 import { GetMinAndMaxPagesService } from './services/getMinAndMaxPages.service';
+import { SearchBooksComponent } from './components/search-books/search-books.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { GetMinAndMaxPagesService } from './services/getMinAndMaxPages.service';
     AuthorCreateFromComponent,
     BookCreateFromComponent,
     FilterBooksComponent,
+    SearchBooksComponent,
     
 
   ],
